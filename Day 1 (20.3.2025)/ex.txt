@@ -1,0 +1,206 @@
+# mysql-u root -p
+'mysql-u' is not recognized as an internal or external command,
+operable program or batch file.
+
+2022asp75@CL2-06 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| aa                 |
+| agriharvestnexus   |
+| bfl                |
+| bookboat           |
+| books              |
+| bookstore          |
+| company            |
+| companydb          |
+| englishfi          |
+| hospital           |
+| icae02             |
+| icae2              |
+| information_schema |
+| inventory          |
+| it1223db           |
+| library            |
+| librarysystem      |
+| moviedb            |
+| mumtaz             |
+| mysql              |
+| performance_schema |
+| phpmyadmin         | retailstore        |
+| sirnathidawasa     |
+| spjbase            |
+| studentdb          |
+| students           |
+| test               |
+| university         |
+| uovlib             |
+| users              |
++--------------------+
+31 rows in set (0.056 sec)
+
+MariaDB [(none)]> create database UOV;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| aa                 |
+| agriharvestnexus   |
+| bfl                |
+| bookboat           |
+| books              |
+| bookstore          |
+| company            |
+| companydb          |
+| englishfi          |
+| hospital           |
+| icae02             |
+| icae2              |
+| information_schema |
+| inventory          |
+| it1223db           |
+| library            |
+| librarysystem      |
+| moviedb            |
+| mumtaz             |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| sirnathidawasa     |
+| spjbase            |
+| studentdb          |
+| students           |
+| test               |
+| university         |
+| uov                |
+| uovlib             |
+| users              |
++--------------------+
+32 rows in set (0.001 sec)
+
+MariaDB [(none)]> use UOV;
+Database changedMariaDB [UOV]> create table students(Std_ID VARCHAR(15),name VARCHAR(30),course VARCHAR(30),Dob DATE,city VARCHAR(20));
+Query OK, 0 rows affected (0.009 sec)
+
+MariaDB [UOV]> DESC students;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| Std_ID | varchar(15) | YES  |     | NULL    |       |
+| name   | varchar(30) | YES  |     | NULL    |       |
+| course | varchar(30) | YES  |     | NULL    |       |
+| Dob    | date        | YES  |     | NULL    |       |
+| city   | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.013 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/01','Nimna','AMC',2022-02-05,'Vavuniya');
+Query OK, 1 row affected, 1 warning (0.029 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/01','Nimna','AMC','2022-02-05','Vavuniya');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> select * from students;
++-------------+-------+--------+------------+----------+
+| Std_ID      | name  | course | Dob        | city     |
++-------------+-------+--------+------------+----------+
+| 2022/ASP/01 | Nimna | AMC    | 0000-00-00 | Vavuniya |
+| 2022/ASP/01 | Nimna | AMC    | 2022-02-05 | Vavuniya |
++-------------+-------+--------+------------+----------+
+2 rows in set (0.000 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/75','Stella','AMC','2022-05-05','Colombo');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/85','Cartharine','AMC','2022-12-16','Vavuniya');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/84','Dansi','AMC','2022-02-18','Kilinochi');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/83','Piruthi','AMC','2022-11-20','Batti');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> INSERT INTO students VALUES('2022/ASP/81','Minos','AMC','2022-11-20','Batti');
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [UOV]> select * from students
+    -> ;;
++-------------+------------+--------+------------+-----------+
+| Std_ID      | name       | course | Dob        | city      |
++-------------+------------+--------+------------+-----------+
+| 2022/ASP/01 | Nimna      | AMC    | 0000-00-00 | Vavuniya  |
+| 2022/ASP/01 | Nimna      | AMC    | 2022-02-05 | Vavuniya  |
+| 2022/ASP/75 | Stella     | AMC    | 2022-05-05 | Colombo   |
+| 2022/ASP/85 | Cartharine | AMC    | 2022-12-16 | Vavuniya  |
+| 2022/ASP/84 | Dansi      | AMC    | 2022-02-18 | Kilinochi |
+| 2022/ASP/83 | Piruthi    | AMC    | 2022-11-20 | Batti     |
+| 2022/ASP/81 | Minos      | AMC    | 2022-11-20 | Batti     |
++-------------+------------+--------+------------+-----------+
+7 rows in set (0.000 sec)
+
+
+
+
+conclusion
+how to create a database
+howb to craete tables
+how to insert MariaDB [UOV]> create table Employee_Details(Physician_Id VARCHAR(10),name VARCHAR(30),position VARCHAR(50));
+Query OK, 0 rows affected (0.015 sec)
+
+MariaDB [UOV]> DESC Employee_Details;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Physician_Id | varchar(10) | YES  |     | NULL    |       |
+| name         | varchar(30) | YES  |     | NULL    |       |
+| position     | varchar(50) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.011 sec)
+
+MariaDB [UOV]> INSERT INTO Employee_Details VALUES('1','John Dorian','Staff Internist');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> INSERT INTO Employee_Details VALUES('2','Elliot Reid','Attending Physician');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [UOV]> INSERT INTO Employee_Details VALUES('3','Christopher Turk','Surgical Attending Physician');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> INSERT INTO Employee_Details VALUES('4','Percival Cox','Senior Attending Physician');
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [UOV]> INSERT INTO Employee_Details VALUES('5','Keith Dudemeister','MD Resident');
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [UOV]> INSERT INTO Employee_Details VALUES('6','Molly Clock','Attending Psychiatrist');
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [UOV]> select * from Employee_Details;
++--------------+-------------------+------------------------------+
+| Physician_Id | name              | position                     |
++--------------+-------------------+------------------------------+
+| 1            | John Dorian       | Staff Internist              |
+| 2            | Elliot Reid       | Attending Physician          |
+| 3            | Christopher Turk  | Surgical Attending Physician |
+| 4            | Percival Cox      | Senior Attending Physician   |
+| 5            | Keith Dudemeister | MD Resident                  |
+| 6            | Molly Clock       | Attending Psychiatrist       |
++--------------+-------------------+------------------------------+
+6 rows in set (0.000 sec)
+
+MariaDB [UOV]>
