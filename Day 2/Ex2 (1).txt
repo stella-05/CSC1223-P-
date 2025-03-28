@@ -201,34 +201,7 @@ MariaDB [uov]> DESC details;
 +-------+-------------+------+-----+---------+-------+
 5 rows in set (0.015 sec)
 
-MariaDB [uov]> INSERT INTO details VALUES
-    ->
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
-MariaDB [uov]> DESC details;
-+-------+-------------+------+-----+---------+-------+
-| Field | Type        | Null | Key | Default | Extra |
-+-------+-------------+------+-----+---------+-------+
-| id    | int(11)     | NO   | PRI | NULL    |       |
-| Name  | varchar(10) | YES  |     | NULL    |       |
-| Age   | int(11)     | YES  |     | NULL    |       |
-| Grade | char(1)     | YES  |     | NULL    |       |
-| City  | varchar(30) | YES  |     | NULL    |       |
-+-------+-------------+------+-----+---------+-------+
-5 rows in set (0.012 sec)
 
-MariaDB [uov]> LOAD DATA LOCAL INFILE 'C:\Users\2022asp75\Desktop\Database\Day 2\day2.csv'
-    ->  INTO TABLE details
-    ->  FIELDS TERMINATED BY '\t'
-    ->  LINES TERMINATED BY '\n'
-    -> (id,Name,Age,Grade,City);
-ERROR 2 (HY000): File 'C:Users2022asp75DesktopDatabaseDay 2day2.csv' not found (Errcode: 2)
-MariaDB [uov]> LOAD DATA LOCAL INFILE 'C:/Users/2022asp75/Desktop/Database/Day 2/day2.csv'
-    ->  INTO TABLE details
-    ->  FIELDS TERMINATED BY '\t'
-    ->  LINES TERMINATED BY '\n'
-    -> (id,Name,Age,Grade,City);
-ERROR 2 (HY000): File 'C:/Users/2022asp75/Desktop/Database/Day 2/day2.csv' not found (Errcode: 2)
 MariaDB [uov]> LOAD DATA LOCAL INFILE 'C:/Users/2022asp75/Desktop/Database/Day 2/day2.csv'
     ->  INTO TABLE details
     ->  FIELDS TERMINATED BY '\t'
@@ -251,3 +224,6 @@ MariaDB [uov]> select * from details;
 6 rows in set (0.000 sec)
 
 MariaDB [uov]>
+
+conclusion: learnt how to create the database,insert attributes into the table and view the data.
+aspecially learnt how to save the details in notepad in'.csv' and how to use the pathlink to the database,how to insert details with linkpath.
