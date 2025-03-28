@@ -1,0 +1,5 @@
+ LOAD DATA LOCAL INFILE 'C:/Users/2022asp75/Desktop/Database/Day 2/day2.csv'
+ INTO TABLE details
+ FIELDS TERMINATED BY '\t'
+ LINES TERMINATED BY '\n'
+(id,Name,Age,Grade,City);

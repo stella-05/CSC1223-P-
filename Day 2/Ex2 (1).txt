@@ -1,0 +1,253 @@
+Setting environment for using XAMPP for Windows.
+2022asp75@CL2-06 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> Show databases;
++--------------------+
+| Database           |
++--------------------+
+| aa                 |
+| agriharvestnexus   |
+| bfl                |
+| bookboat           |
+| books              |
+| bookstore          |
+| company            |
+| companydb          |
+| englishfi          |
+| hospital           |
+| icae02             |
+| icae2              |
+| information_schema |
+| inventory          |
+| it1223db           |
+| library            |
+| librarysystem      |
+| moviedb            |
+| mumtaz             |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| sirnathidawasa     |
+| spjbase            |
+| studentdb          |
+| students           |
+| test               |
+| university         |
+| uov                |
+| uovlib             |
+| users              |
++--------------------+
+32 rows in set (0.063 sec)
+
+MariaDB [(none)]> use uov;
+Database changed
+MariaDB [uov]> create table patient(Patientid int Primary key,Name char(25),Address char(5),Phone int);
+Query OK, 0 rows affected (0.012 sec)
+
+MariaDB [uov]> DESC patient;
++-----------+----------+------+-----+---------+-------+
+| Field     | Type     | Null | Key | Default | Extra |
++-----------+----------+------+-----+---------+-------+
+| Patientid | int(11)  | NO   | PRI | NULL    |       |
+| Name      | char(25) | YES  |     | NULL    |       |
+| Address   | char(5)  | YES  |     | NULL    |       |
+| Phone     | int(11)  | YES  |     | NULL    |       |
++-----------+----------+------+-----+---------+-------+
+4 rows in set (0.017 sec)
+
+MariaDB [uov]>
+
+MariaDB [uov]> INSERT INTO patient VALUES
+    -> ('100000001','John Smith','42 Foobar Lane','5550256'),
+    -> ('100000002','Grace Ritchie','37 Snafu Drive','5550512'),
+    -> ('100000003','Todd Quilan','101 Omgbbq Strret','5551204'),
+    -> ('100000004','Dennis Doe','1100 Foobaz Avenue','5552048');
+Query OK, 4 rows affected, 8 warnings (0.033 sec)
+Records: 4  Duplicates: 0  Warnings: 8
+MariaDB [uov]> select * from patient;
++-----------+---------------+---------+-------+
+| Patientid | Name          | Address | Phone |
++-----------+---------------+---------+-------+
+| 100000001 | John Smith    | 42 Fo   |   555 |
+| 100000002 | Grace Ritchie | 37 Sn   |   555 |
+| 100000003 | Todd Quilan   | 101 O   |   555 |
+| 100000004 | Dennis Doe    | 1100    |   555 |
++-----------+---------------+---------+-------+
+4 rows in set (0.000 sec)
+
+MariaDB [uov]> show tables;
++------------------+
+| Tables_in_uov    |
++------------------+
+| employee_details |
+| patient          |
+| students         |
++------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [uov]> DROP TABLE students;
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [uov]> show tables;
++------------------+
+| Tables_in_uov    |
++------------------+
+| employee_details |
+| patient          |
++------------------+
+2 rows in set (0.000 sec)
+
+MariaDB [uov]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aa                 |
+| agriharvestnexus   |
+| bfl                |
+| bookboat           |
+| books              |
+| bookstore          |
+| company            |
+| companydb          |
+| englishfi          |
+| hospital           |
+| icae02             |
+| icae2              |
+| information_schema |
+| inventory          |
+| it1223db           |
+| library            |
+| librarysystem      |
+| moviedb            |
+| mumtaz             |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| sirnathidawasa     |
+| spjbase            |
+| studentdb          |
+| students           |
+| test               |
+| university         |
+| uov                |
+| uovlib             |
+| users              |
++--------------------+
+32 rows in set (0.001 sec)
+
+MariaDB [uov]> DROP database icae02;
+Query OK, 1 row affected (0.025 sec)
+
+MariaDB [uov]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aa                 |
+| agriharvestnexus   |
+| bfl                |
+| bookboat           |
+| books              |
+| bookstore          |
+| company            |
+| companydb          |
+| englishfi          |
+| hospital           |
+| icae2              |
+| information_schema |
+| inventory          |
+| it1223db           |
+| library            |
+| librarysystem      |
+| moviedb            |
+| mumtaz             |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| sirnathidawasa     |
+| spjbase            |
+| studentdb          |
+| students           |
+| test               |
+| university         |
+| uov                |
+| uovlib             |
+| users              |
++--------------------+
+31 rows in set (0.001 sec)
+MariaDB [uov]> create table details(id int Primary key,Name VARCHAR(10),Age int,Grade CHAR(1),City VARCHAR(30));
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [uov]> DESC details;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   | PRI | NULL    |       |
+| Name  | varchar(10) | YES  |     | NULL    |       |
+| Age   | int(11)     | YES  |     | NULL    |       |
+| Grade | char(1)     | YES  |     | NULL    |       |
+| City  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.015 sec)
+
+MariaDB [uov]> INSERT INTO details VALUES
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [uov]> DESC details;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   | PRI | NULL    |       |
+| Name  | varchar(10) | YES  |     | NULL    |       |
+| Age   | int(11)     | YES  |     | NULL    |       |
+| Grade | char(1)     | YES  |     | NULL    |       |
+| City  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.012 sec)
+
+MariaDB [uov]> LOAD DATA LOCAL INFILE 'C:\Users\2022asp75\Desktop\Database\Day 2\day2.csv'
+    ->  INTO TABLE details
+    ->  FIELDS TERMINATED BY '\t'
+    ->  LINES TERMINATED BY '\n'
+    -> (id,Name,Age,Grade,City);
+ERROR 2 (HY000): File 'C:Users2022asp75DesktopDatabaseDay 2day2.csv' not found (Errcode: 2)
+MariaDB [uov]> LOAD DATA LOCAL INFILE 'C:/Users/2022asp75/Desktop/Database/Day 2/day2.csv'
+    ->  INTO TABLE details
+    ->  FIELDS TERMINATED BY '\t'
+    ->  LINES TERMINATED BY '\n'
+    -> (id,Name,Age,Grade,City);
+ERROR 2 (HY000): File 'C:/Users/2022asp75/Desktop/Database/Day 2/day2.csv' not found (Errcode: 2)
+MariaDB [uov]> LOAD DATA LOCAL INFILE 'C:/Users/2022asp75/Desktop/Database/Day 2/day2.csv'
+    ->  INTO TABLE details
+    ->  FIELDS TERMINATED BY '\t'
+    ->  LINES TERMINATED BY '\n'
+    -> (id,Name,Age,Grade,City);
+Query OK, 6 rows affected (0.012 sec)
+Records: 6  Deleted: 0  Skipped: 0  Warnings: 0
+
+MariaDB [uov]> select * from details;
++----+---------+------+-------+-------------+
+| id | Name    | Age  | Grade | City        |
++----+---------+------+-------+-------------+
+    || Alice   |   20 | A     | Newyork
+    || Bob     |   22 | B     | Chicago
+    || Charlie |   21 | A     | Newyork
+     | David   |   23 | C     | Boston
+    || Emma    |   22 | B     | Chicago
+|  6 | Frank   |   20 | A     | Los Angeles |
++----+---------+------+-------+-------------+
+6 rows in set (0.000 sec)
+
+MariaDB [uov]>
